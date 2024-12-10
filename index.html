@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tablica = [];
+        let iloscZer = 0; 
+        let liczba;
+
+        while (true) {
+            liczba = prompt("Podaj liczbę (kliknij anuluj aby zakończyć):");
+            if (liczba === null) break;
+            liczba = parseFloat(liczba);
+
+
+
+            if (!isNaN(liczba)) 
+            { if (liczba === 0) 
+            { iloscZer++; } 
+            else 
+            { tablica.push(liczba); } }
+            else 
+            { alert('To nie jest liczba, wpisz liczbę'); } }
+
+
+            const nieparzyste = tablica.filter(num => num % 2 !== 0); 
+            const parzyste = tablica.filter(num => num % 2 === 0); 
+            const wynik = [...nieparzyste, ...parzyste]; 
+            document.write('Twoja tablica: ' + wynik.join(", ") + "<br>"); 
+            document.write('Ilość zer: ' + iloscZer);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
